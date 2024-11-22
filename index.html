@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Electronic</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 30%, rgba(255,255,255,0.02) 100%);
+            animation: animate-bg 10s infinite;
+        }
+        @keyframes animate-bg {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(20, 20, 20, 0.9);
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: cyan;
+        }
+        .time {
+            font-size: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            flex-direction: column;
+        }
+        .details-bar {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-form {
+            width: 300px;
+            padding: 20px;
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 10px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #222;
+            border: none;
+            color: white;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: cyan;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Alpha Electronic</div>
+        <div class="time" id="timeDisplay"></div>
+    </header>
+    <div class="content">
+        <div class="details-bar">
+            <h1>Welcome to Alpha Electronic</h1>
+            <p>Your trusted source for electronics and programming solutions.</p>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button>Send Message</button>
+        </div>
+    </div>
+    <script>
+        function updateTime() {
+            const timeDisplay = document.getElementById('timeDisplay');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            timeDisplay.textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); // Call initially
+    </script>
+</body>
+</html>
