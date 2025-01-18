@@ -2,17 +2,19 @@
  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
  import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
  
  const firebaseConfig = {
  //YOUR COPIED FIREBASE PART SHOULD BE HERE
  //WATCH THIS VIDEO TO LEARN WHAT TO PUT HERE   https://youtu.be/_Xczf06n6x0
-   apiKey: "AIzaSyA0zN_Z4PZrvQujailj7F394v9tlMEjFAk",
-   authDomain: "login-form-aa965.firebaseapp.com",
-   projectId: "login-form-aa965",
-   storageBucket: "login-form-aa965.firebasestorage.app",
-   messagingSenderId: "909028305995",
-   appId: "1:909028305995:web:639abcb2c89667a1d5f1ce",
-   measurementId: "G-S9V82K3267"
+     apiKey: "AIzaSyA0zN_Z4PZrvQujailj7F394v9tlMEjFAk",
+  authDomain: "login-form-aa965.firebaseapp.com",
+  projectId: "login-form-aa965",
+  storageBucket: "login-form-aa965.firebasestorage.app",
+  messagingSenderId: "909028305995",
+  appId: "1:909028305995:web:639abcb2c89667a1d5f1ce",
+  measurementId: "G-S9V82K3267"
  };
 
  // Initialize Firebase
